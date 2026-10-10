@@ -1,0 +1,14 @@
+package com.southwind.aispringboot.DTO.command;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
+@Data
+public class ConsultationSessionCreateDTO {
+    @Size(max = 200,message = "标题长度不能超过200个字符")
+    private String sessionTitle;
+    @NotBlank(message = "初始消息不能为空")
+    @Size(max = 2000,message = "初始消息长度不能超过2000个字符")
+    private String initialMessage;
+}
